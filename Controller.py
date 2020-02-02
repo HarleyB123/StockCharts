@@ -1,7 +1,6 @@
 import datetime
-from plotly.offline import plot
-from plotly.graph_objs import Scatter
 import requests
+from model import
 
 """
 I want this code to focus on high cohesion and low coupling between components.
