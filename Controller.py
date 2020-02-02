@@ -19,9 +19,3 @@ class Controller:
     # Should the below be in the model?
     def generate_graph(self, dates, currencies):
         return(plot([Scatter(x=dates, y=currencies)], output_type='div'))
-
-
-# The below will no longer be needed (but shows how the process will work - some will be moved to View.py)
-#    dates = [date for date, currencies in sorted(values.items())]
-#    currencies = [currencies.get('GBP') for date, currencies in sorted(values.items())]
-#    generate_graph(dates, currencies)
