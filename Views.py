@@ -24,7 +24,7 @@ def graph_viewer():
         values = ApiController.obtain_values(start, end, symbol, base)
         dates = [date for date, currencies in sorted(values.items())]
         currencies = [currencies.get('GBP') for date, currencies in sorted(values.items())]
-        GraphDiv = ApiController.
+        GraphDiv = ApiController.generate_graph(dates, currencies)
         # Will need to do Controller() actions here
         GraphHTML = render_template('reports.html', graph_placeholder=GraphDiv)
     return GraphHTML
