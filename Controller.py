@@ -1,5 +1,6 @@
 import datetime
-import plotly.graph_objects as go
+from plotly.offline import plot
+from plotly.graph_objs import Scatter
 import requests
 
 """
@@ -20,9 +21,7 @@ def obtain_values(start_at, end_at):  # Will need to pass through: startdate, en
 
 
 def generate_graph(dates, currencies):
-    fig = go.Figure([go.Scatter(x=dates, y=currencies)])
-    fig.show()
-
+    fig = plot([Scatter(x=dates, y=currencies)], output_type='div')
 
 if __name__ == '__main__':
     values = obtain_values(start, end)
