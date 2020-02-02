@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Markup
 from flask_cors import CORS
 from controller import Controller
 import datetime
@@ -26,7 +26,7 @@ def graph_viewer():
         currencies = [currencies.get('GBP') for date, currencies in sorted(values.items())]
         GraphDiv = ApiController.generate_graph(dates, currencies)
         # Will need to do Controller() actions here
-        GraphHTML = render_template('graphs.html', graph_placeholder=GraphDiv)
+        GraphHTML = render_template('graphs.html', graph_placeholder=Markup(GraphDiv))
     return GraphHTML
 
 
