@@ -1,6 +1,6 @@
 import datetime
 import requests
-from model import
+from model import stock_graphs
 
 """
 I want this code to focus on high cohesion and low coupling between components.
@@ -17,4 +17,4 @@ class Controller:
 
     # Should the below be in the model?
     def generate_graph(self, dates, currencies):
-        return(plot([Scatter(x=dates, y=currencies)], output_type='div'))
+        return(stock_graphs.render_graph(dates, currencies))

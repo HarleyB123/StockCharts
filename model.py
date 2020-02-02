@@ -8,5 +8,5 @@ class stock_graphs():
         self.currencies = currencies
 
     @classmethod
-    def generate_graphs(self, dates, currencies):
+    def render_graph(self, dates, currencies):
         return(plot([Scatter(x=dates, y=currencies)], output_type='div'))
