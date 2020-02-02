@@ -21,6 +21,7 @@ class Controller():
         values = response.json().get("rates", {})
         return(values)
 
+    # Should the below be in the model?
     def generate_graph(dates, currencies):
         return(plot([Scatter(x=dates, y=currencies)], output_type='div'))
 
