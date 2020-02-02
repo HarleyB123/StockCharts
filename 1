@@ -22,9 +22,7 @@ def graph_viewer():
         start = end - datetime.timedelta(days=365)
         ApiController = Controller()
         values = ApiController.obtain_values(start, end, symbol, base)
-        dates = [date for date, currencies in sorted(values.items())]
-        currencies = [currencies.get('GBP') for date, currencies in sorted(values.items())]
-        GraphDiv = ApiController.
+
         # Will need to do Controller() actions here
         GraphHTML = render_template('reports.html', graph_placeholder=GraphDiv)
     return GraphHTML
