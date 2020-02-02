@@ -15,6 +15,5 @@ class Controller:
         values = response.json().get("rates", {})
         return(values)
 
-    # Should the below be in the model?
     def generate_graph(self, dates, currencies):
         return(stock_graphs.render_graph(dates, currencies))
